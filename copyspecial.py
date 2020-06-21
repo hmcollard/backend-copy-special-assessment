@@ -30,7 +30,7 @@ def get_special_paths(dirname):
 def copy_to(path_list, dest_dir):
     """Copy special files to new directory"""
     if dest_dir not in os.listdir('.'):
-        os.makepipdirs(dest_dir)
+        os.makedirs(dest_dir)
     for path in path_list:
         shutil.copy(path, dest_dir)
 
