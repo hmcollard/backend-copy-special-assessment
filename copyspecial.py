@@ -30,7 +30,7 @@ def get_special_paths(dirname):
 def copy_to(path_list, dest_dir):
     """Copy special files to new directory"""
     if dest_dir not in os.listdir('.'):
-        os.makedirs(dest_dir)
+        os.makepipdirs(dest_dir)
     for path in path_list:
         shutil.copy(path, dest_dir)
 
@@ -68,8 +68,8 @@ def main(args):
     special_files = get_special_paths(ns.from_dir)
 
     if len(args) < 1:  # might need (ns)
-        print(
-            'usage: python copyspecial.py {from_dir | --todir dir | --tozip zipfile} file')
+        print('usage: python copyspecial.py from_dir' +
+              '{--todir dir | --tozip zipfile}')
         sys.exit(1)
 
     if ns.todir:
